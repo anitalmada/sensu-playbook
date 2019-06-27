@@ -1,0 +1,15 @@
+{
+ 
+	"client": {
+ 
+	"environment": "development",
+ 
+	"subscriptions": [
+ 
+		"linux"
+ 
+		]	
+ 
+	}	
+ 
+}

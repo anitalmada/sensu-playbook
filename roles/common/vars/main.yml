@@ -1,0 +1,24 @@
+---
+sensu_user_name: sensu
+sensu_group_name: sensu
+sensu_config_path: /etc/sensu
+sensu_rabbitmq_config: templates/sensu-rabbitmq.json.j2
+sensu_rabbitmq_repo_version: v3.7.x
+sensu_rabbitmq_signing_key: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
+sensu_rabbitmq_baseurl: "https://dl.bintray.com/rabbitmq/rpm/rabbitmq-server/{{ sensu_rabbitmq_repo_version }}/el/7"
+sensu_rabbitmq_erlang_repo_version: 20
+sensu_rabbitmq_erlang_signing_key: "{{ sensu_rabbitmq_signing_key }}"
+sensu_rabbitmq_erlang_baseurl: "https://dl.bintray.com/rabbitmq-erlang/rpm/erlang/{{ sensu_rabbitmq_erlang_repo_version }}/el/7"
+sensu_rabbitmq_config_path: /etc/rabbitmq
+sensu_rabbitmq_enable_ssl: false
+sensu_rabbitmq_host: "{{ groups['sensu_rabbitmq_servers'][0] }}"
+sensu_rabbitmq_port: 5672
+sensu_rabbitmq_pkg_state: present
+sensu_rabbitmq_server: false
+sensu_rabbitmq_service_name: rabbitmq-server
+sensu_rabbitmq_user_name: sensu
+sensu_rabbitmq_password: sensu
+sensu_rabbitmq_vhost: /sensu
+sensu_rabbitmq_config_template: templates/rabbitmq.config.j2
+__bash_path: /bin/bash
+__root_group: root
