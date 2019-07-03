@@ -149,7 +149,7 @@
           owner: root
           group: "{{ __root_group }}"
           mode: 0644
-        notify: restart rabbitmq service
+          #notify: restart rabbitmq service
 
       - name: Ensure RabbitMQ is running
         tags: rabbitmq
