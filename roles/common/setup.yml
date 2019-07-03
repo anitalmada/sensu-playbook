@@ -1,9 +1,13 @@
 ---
-  - hosts: sensu
+  - hosts: all
     become: true
     gather_facts: yes
     tasks:
-     
+      - name: Set authorized key taken from file
+        authorized_key:
+          user: root
+          state: present
+          key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"     
       - name: Include ansible_distribution vars
         include_vars:
           file: "vars/main.yml"
@@ -164,5 +168,10 @@
           group: "{{ sensu_group_name }}"
           src: "{{ sensu_rabbitmq_config }}"
           mode: "0640"
+      - name: enable necessary ports with firewalld
+        firewalld:
+          port: 3000/tcp
+          permanent: yes
+          state: enabled
     handlers:
       - include_tasks: handlers/main.yml

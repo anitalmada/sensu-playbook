@@ -1,2 +1,5 @@
 [sensu]
-192.168.53.10 ansible_ssh_user=vagrant
+192.168.122.169 ansible_ssh_user=root
+
+[vmsensu]
+192.168.122.195 ansible_ssh_user=root
