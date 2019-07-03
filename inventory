@@ -2,4 +2,4 @@
 192.168.122.169 ansible_ssh_user=root
 
 [vmsensu]
-192.168.122.195 ansible_ssh_user=root
+192.168.122.168 ansible_ssh_user=root

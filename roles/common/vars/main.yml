@@ -20,5 +20,8 @@ sensu_rabbitmq_user_name: sensu
 sensu_rabbitmq_password: sensu
 sensu_rabbitmq_vhost: /sensu
 sensu_rabbitmq_config_template: templates/rabbitmq.config.j2
+epel_repo_url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+epel_repo_gpg_key_url: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
+epel_repofile_path: "/etc/yum.repos.d/epel.repo"
 __bash_path: /bin/bash
 __root_group: root
